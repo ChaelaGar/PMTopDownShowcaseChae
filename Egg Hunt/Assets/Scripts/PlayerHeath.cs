@@ -14,7 +14,7 @@ public class PlayerHeath : MonoBehaviour
 
     float timer = 0f;
     [SerializeField]
-    float timerdelay = 0.5f;
+    float timerdelay = 2f;
  
     [SerializeField]
     Image healthBar;
@@ -29,12 +29,12 @@ public class PlayerHeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        timer = Time.deltaTime;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag == "Eneby" )
+        if ((collision.gameObject.tag == "Enemy") && timer > timerdelay) 
             Health -= 1;
         timer = 0f;
             Debug.Log(Health);
@@ -51,7 +51,7 @@ public class PlayerHeath : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) 
 
     {
-        if (collision.gameObject.tag == "Eneby")
+        if ((collision.gameObject.tag == "Enemy") && timer > timerdelay)
             Health -= 1;
         timer = 0f;
         Debug.Log(Health);

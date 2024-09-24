@@ -1106,8 +1106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3115e1bc956db59479a544f2557fb9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 1
-  chasedis: 20
+  chaseSpeed: 7
+  chasedis: 9
   homepoint: 1
   homePos: {x: 0, y: 0, z: 0}
 --- !u!58 &1293456465

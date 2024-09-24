@@ -1,0 +1,19 @@
+GamePlay
+
+- Add main menu, (start, exit, credits.)
+- Pause menu (continue, restart, main menu.) *
+- Design at least 2 levels.
+- Win screen
+- 3 enemy prefabs, order of priority is slow, fast, and shooter.
+- Player character functions should be dash, and shoot.
+
+Art
+
+- Animation player character
+- Make 2 tilesets.
+- Finish enemy assets
+- Design GUI assets
+
+Bugs
+
+- Fix the damage not damaging

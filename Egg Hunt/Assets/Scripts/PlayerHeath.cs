@@ -14,7 +14,7 @@ public class PlayerHeath : MonoBehaviour
 
     float timer = 0f;
     [SerializeField]
-    float timerdelay = 2f;
+    float timerdelay = 0.5f;
  
     [SerializeField]
     Image healthBar;
@@ -29,28 +29,11 @@ public class PlayerHeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer = Time.deltaTime;
+        timer += Time.deltaTime;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if ((collision.gameObject.tag == "Enemy") && timer > timerdelay) 
-            Health -= 1;
-        timer = 0f;
-            Debug.Log(Health);
-            //Consequences of your actions
-            //Reload, try try again
-            healthBar.fillAmount = Health / MaxHp;
-            if (Health <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-               // SceneManager.LoadScene("levelLoad");
-            }
-
-        }
-    private void OnTriggerEnter2D(Collider2D collision) 
-
-    {
         if ((collision.gameObject.tag == "Enemy") && timer > timerdelay)
             Health -= 1;
         timer = 0f;
@@ -63,8 +46,8 @@ public class PlayerHeath : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             // SceneManager.LoadScene("levelLoad");
         }
-    }
 
+    }
 
 
 

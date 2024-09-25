@@ -25,5 +25,9 @@ public class LoadLevel : MonoBehaviour
     public void exitapp() { 
     Application.Quit();
     }
+    public void MenuLoad()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
 }

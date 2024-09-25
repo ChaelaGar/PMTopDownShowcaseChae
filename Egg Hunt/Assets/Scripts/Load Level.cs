@@ -18,6 +18,7 @@ public class LoadLevel : MonoBehaviour
     }
     public void LoadTheLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level 1");
 
     }

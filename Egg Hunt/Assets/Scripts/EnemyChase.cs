@@ -8,7 +8,7 @@ public class EnemyChase : MonoBehaviour
     float chaseSpeed = 1.0f;
     GameObject player;
     [SerializeField]
-    float chasedis = 20.0f;
+    float chasedis = 5.0f;
     [SerializeField]
     bool homepoint = true;
     [SerializeField]

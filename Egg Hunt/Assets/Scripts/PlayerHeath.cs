@@ -15,9 +15,11 @@ public class PlayerHeath : MonoBehaviour
     float timer = 0f;
     [SerializeField]
     float timerdelay = 0.5f;
- 
+    [SerializeField]
+    int Eggs = 0;
     [SerializeField]
     Image healthBar;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,7 @@ public class PlayerHeath : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if ((collision.gameObject.tag == "Enemy") && timer > timerdelay)
             Health -= 1;
-        timer = 0f;
+        timer = 0;
         Debug.Log(Health);
         //Consequences of your actions
         //Reload, try try again
@@ -48,11 +50,23 @@ public class PlayerHeath : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if ((collision.gameObject.tag == "wincon"))
+        {
+            Eggs += 1;
+            Destroy(collision.gameObject);
+
+        }
+        if (Eggs >= 3)
+        {
+            SceneManager.LoadScene("Win");
+        }
 
 
-
+    }
 }
-    
 
 
 

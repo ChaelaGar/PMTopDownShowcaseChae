@@ -1,7 +1,7 @@
 GamePlay
 
 - Add main menu, (start, exit, credits.) **
-- Pause menu (continue, restart, main menu.) 
+- Pause menu (continue, restart, main menu.) ***
 - Design at least 2 levels.
 - Win screen <<
 - 3 enemy prefabs, order of priority is slow, fast, and shooter.
@@ -9,9 +9,9 @@ GamePlay
 
 Art
 
-- Animation player character
-- Make 2 tilesets.
-- Finish enemy assets
+- Animation player character !
+- Make 2 tilesets. 1/2
+- Finish enemy assets <<
 - Design GUI assets
 
 Bugs
@@ -22,13 +22,13 @@ Bugs
 
 
 Requirements list:
-1.	At least 2 new tile sheets
+1.	At least 2 new tile sheets <<
 2.	At least 1 new character (player or enemy) sheet <<
 3.	Main menu (start screen)<<
-4.	At least 2 unique levels (different tilesets)
+4.	At least 2 unique levels (different tilesets) <
 5.	Win screen <<
 6.	At least 1 enemy prefab <<
 7.	Player health <<
-8.	Player animation
+8.	Player animation <<
 9.	Pause menu <<
 10.	UI <<

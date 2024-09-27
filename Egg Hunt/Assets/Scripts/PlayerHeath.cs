@@ -33,10 +33,10 @@ public class PlayerHeath : MonoBehaviour
     {
         timer += Time.deltaTime;
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if ((collision.gameObject.tag == "Enemy") && timer > timerdelay)
+        if ((collision.gameObject.tag == "Enemy"))
             Health -= 1;
         timer = 0;
         Debug.Log(Health);
@@ -52,8 +52,16 @@ public class PlayerHeath : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         Debug.Log(collision.gameObject.name);
-        if ((collision.gameObject.tag == "wincon"))
+        if ((collision.gameObject.tag == "Enemy")) { 
+            Health -= 1;
+        Debug.Log(Health);
+        //Consequences of your actions
+        //Reload, try try again
+        healthBar.fillAmount = Health / MaxHp; }
+
+       else if ((collision.gameObject.tag == "wincon"))
         {
             Eggs += 1;
             Destroy(collision.gameObject);

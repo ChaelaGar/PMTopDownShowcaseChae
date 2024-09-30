@@ -10,9 +10,9 @@ public class EnemyChase : MonoBehaviour
     [SerializeField]
     float chasedis = 5.0f;
     [SerializeField]
-    bool homepoint = true;
-    [SerializeField]
-    Vector3 homePos;
+    //bool homepoint = true;
+    //[SerializeField]
+   // Vector3 homePos;
 
     // Start is called before the first frame update
     void Start()
@@ -29,20 +29,20 @@ public class EnemyChase : MonoBehaviour
         //The chase direction is destination - enemy starting position
         Vector3 playerPosition = player.transform.position;
         Vector3 chaseDir = playerPosition - transform.position;
-        Vector3 homedir = homePos - transform.position;
+        //Vector3 homedir = homePos - transform.position;
         //move towards player
         if (chaseDir.magnitude < chasedis)
         {
             chaseDir.Normalize();
             GetComponent<Rigidbody2D>().velocity = chaseDir * chaseSpeed;
         }
-        else if (homepoint == true)
-        {
-        if (homedir.magnitude < 1.0f)
+      //  else if (homepoint == true)
+      //  {
+      //  if (homedir.magnitude < 1.0f)
 
-                    homedir.Normalize();
-            GetComponent<Rigidbody2D>().velocity = homedir * chaseSpeed;
-        }
+                  //  homedir.Normalize();
+         //   GetComponent<Rigidbody2D>().velocity = homedir * chaseSpeed;
+       // }
         
          
     

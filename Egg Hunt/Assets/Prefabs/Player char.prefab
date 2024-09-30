@@ -33,10 +33,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.7486359, y: 0.34392676, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.3576, y: 1.407, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6151019290055236398}
+  - {fileID: 9147210027207472827}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8680466031292417429
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1776697115
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 249325590, guid: be34b429f1c424342b8cdd5098a3a668, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,8 +123,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0022583008, y: -0.06915355}
-  m_Size: {x: 0.4172945, y: 0.83286715}
+  m_Offset: {x: 0.0022583604, y: -0.31985068}
+  m_Size: {x: 0.36825383, y: 0.39890432}
   m_Direction: 0
 --- !u!50 &48955396730152985
 Rigidbody2D:
@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 15
-  Sprint: 10
   MoveSpeedDef: 10
 --- !u!114 &9152896724206454515
 MonoBehaviour:
@@ -181,7 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 9
-  timerdelay: 0.5
+  timerDelay: 0.5
+  Eggs: 0
   healthBar: {fileID: 0}
 --- !u!95 &2220774601838494118
 Animator:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e747cbf2151e3fd43bcad77ec06a2b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2905112391325940139
+--- !u!1 &3469328977480299959
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,9 +224,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6151019290055236398}
-  - component: {fileID: 5684340046140846449}
-  - component: {fileID: 276108751821888525}
+  - component: {fileID: 9147210027207472827}
+  - component: {fileID: 6479766461467706564}
+  - component: {fileID: 475526381560870079}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -234,13 +234,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6151019290055236398
+--- !u!4 &9147210027207472827
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905112391325940139}
+  m_GameObject: {fileID: 3469328977480299959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
@@ -249,17 +249,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1924811862622683096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &5684340046140846449
+--- !u!20 &6479766461467706564
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905112391325940139}
+  m_GameObject: {fileID: 3469328977480299959}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.54369885, g: 0.63309896, b: 0.7735849, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.02006942, g: 0.08692976, b: 0.103773594, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -284,7 +284,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.41
+  orthographic size: 5.51
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -292,19 +292,19 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &276108751821888525
+--- !u!81 &475526381560870079
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905112391325940139}
+  m_GameObject: {fileID: 3469328977480299959}
   m_Enabled: 1

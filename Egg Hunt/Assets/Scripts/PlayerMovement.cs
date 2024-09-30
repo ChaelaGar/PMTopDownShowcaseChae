@@ -7,8 +7,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField]
     float MoveSpeed = 10f;
-    [SerializeField]
-    float Sprint = 10f;
+  //  [SerializeField]
+    //float Sprint = 10f;
     [SerializeField]
     float MoveSpeedDef = 10f;
     // Start is called before the first frame update

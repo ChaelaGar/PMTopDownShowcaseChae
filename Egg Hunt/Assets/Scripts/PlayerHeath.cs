@@ -4,21 +4,25 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 public class PlayerHeath : MonoBehaviour
 {
+   
+   // public TextMeshProUGUI Scoretext;
     [SerializeField]
 
     float Health = 12;
     float MaxHp;
-    string levelLoad = "lose";
+   // string levelLoad = "lose";
 
     float timer = 0f;
     [SerializeField]
-    float timerdelay = 0.5f;
+    float timerDelay = 4f;
     [SerializeField]
     int Eggs = 0;
     [SerializeField]
     Image healthBar;
+    
     
 
     // Start is called before the first frame update
@@ -26,6 +30,7 @@ public class PlayerHeath : MonoBehaviour
     {
         MaxHp = Health;
         healthBar.fillAmount = Health / MaxHp;
+        
     }
 
     // Update is called once per frame
@@ -33,17 +38,19 @@ public class PlayerHeath : MonoBehaviour
     {
         timer += Time.deltaTime;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if ((collision.gameObject.tag == "Enemy"))
+        if ((collision.gameObject.tag == "Enemy") && timer > timerDelay) { 
+
             Health -= 1;
         timer = 0;
+
         Debug.Log(Health);
         //Consequences of your actions
         //Reload, try try again
-        healthBar.fillAmount = Health / MaxHp;
-        if (Health <= 0)
+        healthBar.fillAmount = Health / MaxHp; }
+       else if (Health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             // SceneManager.LoadScene("levelLoad");
@@ -54,22 +61,28 @@ public class PlayerHeath : MonoBehaviour
     {
 
         Debug.Log(collision.gameObject.name);
-        if ((collision.gameObject.tag == "Enemy")) { 
+        if ((collision.gameObject.tag == "Enemy"))
+        {
             Health -= 1;
-        Debug.Log(Health);
-        //Consequences of your actions
-        //Reload, try try again
-        healthBar.fillAmount = Health / MaxHp; }
+            Debug.Log(Health);
+            //Consequences of your actions
+            //Reload, try try again
+            healthBar.fillAmount = Health / MaxHp;
+        }
 
-       else if ((collision.gameObject.tag == "wincon"))
+        else if ((collision.gameObject.tag == "egg"))
         {
             Eggs += 1;
             Destroy(collision.gameObject);
 
         }
-        if (Eggs >= 3)
+        else if ((collision.gameObject.tag == "wincon"))
         {
             SceneManager.LoadScene("Win");
+        }
+        if (Eggs >= 3)
+        {
+            SceneManager.LoadScene("Level 2");
         }
 
 
